@@ -10,7 +10,7 @@ public class BasicMovement : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -20,5 +20,11 @@ public class BasicMovement : MonoBehaviour {
 		Vector3 movement = new Vector3 (x * speed * Time.deltaTime, 0f, z * speed * Time.deltaTime);
 		transform.position += movement;
 
+	}
+
+	void OnCollisionEnter(Collision c){
+		if (c.collider.tag.Equals("Fog")) {
+			Destroy (c.gameObject);
+		}
 	}
 }

@@ -1,34 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FogMapping : MonoBehaviour {
 
-	public int BoxSize;
-	public GameObject FogBox;
+	public int Seeding;
+	public GameObject FogSeed;
 	public Transform Ground;
 
-	private GameObject[,] fogGreed;
+	void Awake(){
 
-	void Start () {
+		float groundX = Ground.GetComponent<MeshRenderer> ().bounds.size.x;
+		float groundY = Ground.GetComponent<MeshRenderer> ().bounds.size.z;
 
-		transform.localScale = Ground.localScale;
-		int f = BoxSize * (int)transform.localScale.x;
-		int c = BoxSize * (int)transform.localScale.z;
+		float seedSizeX = groundX / Seeding;
+		float seedSizeY = groundY / Seeding;
 
-		fogGreed = new GameObject[f, c];
+		Debug.Log (seedSizeX);
+		Debug.Log (seedSizeY);
 
-		for (int i = 0; i < fogGreed.GetLength (0); i++) {
-			for (int j = 0; j < fogGreed.GetLength (1); j++) {
-				GameObject fogBox = Instantiate (FogBox);
-				fogBox.transform.localScale = new Vector3 (fogBox.transform.localScale.x /BoxSize, 1f, fogBox.transform.localScale.z/BoxSize);
+		for (int i = 0; i < Seeding; i++) {
+			for (int j = 0; j < Seeding; j++) {
+				GameObject newSeed = Instantiate (FogSeed);
 
-//
-//				fogBox.transform.position = new Vector3 (0 -transform.localScale.x * 2 + i * fogBox.transform.localScale.x, 
-//					transform.position.y, 0-transform.localScale.z * 2 + j * fogBox.transform.localScale.z );
-				fogGreed [i, j] = fogBox;
+				newSeed.transform.localScale = new Vector3 (seedSizeX * 2, 1f, seedSizeY * 2);
+				newSeed.transform.position = new Vector3(-groundX / 2 + (i + 1)* seedSizeX, 20f, -groundY / 2 + (j+1) * seedSizeY);
+
+				newSeed.transform.SetParent (GameObject.Find ("Fog").GetComponent<Transform> ());
 			}
 		}
+
+		FogSeed.SetActive (false);
+	}
+
+	void Start () {
 	}
 	
 	void Update () {
