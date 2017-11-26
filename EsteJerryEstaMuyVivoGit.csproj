@@ -219,6 +219,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AssetsPruebaPath\Scripts\ClickableTile.cs" />
+    <Compile Include="Assets\AssetsPruebaPath\Scripts\TileMap.cs" />
+    <Compile Include="Assets\AssetsPruebaPath\Scripts\TileType.cs" />
+    <Compile Include="Assets\AssetsPruebaPath\Scripts\Unit.cs" />
     <Compile Include="Assets\Scripts\Hex.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />
     <Compile Include="Assets\Scripts\mouseManager.cs" />
