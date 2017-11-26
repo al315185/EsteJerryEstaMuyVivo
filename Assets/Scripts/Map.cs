@@ -28,6 +28,8 @@ public class Map : MonoBehaviour {
                 }
                 GameObject hex_go = (GameObject)Instantiate(HexPrefab, new Vector3(xPos, 0, y*zOffset), Quaternion.identity);
                 hex_go.name = "Hex_" + x + "_" + y;
+                hex_go.GetComponent<Hex>().x = x;
+                hex_go.GetComponent<Hex>().y = y;
 
                 hex_go.transform.SetParent(this.transform);
             }
