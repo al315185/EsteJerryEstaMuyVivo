@@ -53,8 +53,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scenes\Rebeca\BasicCamera.cs" />
      <Compile Include="Assets\Scenes\Rebeca\BasicMovement.cs" />
-     <Compile Include="Assets\Scenes\Rebeca\FogMapping.cs" />
-     <Compile Include="Assets\Scenes\Rebeca\ISelectable.cs" />
+     <Compile Include="Assets\Scenes\Rebeca\Fog.cs" />
+     <Compile Include="Assets\Scenes\Rebeca\LittleMap.cs" />
      <Compile Include="Assets\Scenes\Rebeca\SelectionManager.cs" />
      <Compile Include="Assets\Scenes\Rebeca\Unit.cs" />
      <Compile Include="Assets\Scripts\Map.cs" />

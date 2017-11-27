@@ -755,10 +755,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52a0bf4d5e0be0545b281265d0f2f223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rol: 0
+  selectionManager: {fileID: 0}
+  unitType: 0
+  panel: {fileID: 0}
+  finished: 0
+  icon: {fileID: 21300000, guid: 16852a2653e8eb64e8207af251c9bb72, type: 3}
+  kingdom: Chueca
+  lifeSpawn: 100
   Material: {fileID: 2100000, guid: e9a3f09c7406e3f41ad23a80fac0b7eb, type: 2}
-  SoldierIcon: {fileID: 21300000, guid: 16852a2653e8eb64e8207af251c9bb72, type: 3}
-  WorkerIcon: {fileID: 21300000, guid: 94b97d7058fe7634bb00646d6061ff42, type: 3}
+  range: 20
+  damage: 10
 --- !u!136 &136587517306265498
 CapsuleCollider:
   m_ObjectHideFlags: 1

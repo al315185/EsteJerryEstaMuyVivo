@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using AssemblyCSharp;
 using UnityEngine.UI;
 
-public class Unit : MonoBehaviour, ISelectable
+public class Unit : MonoBehaviour
 {
+	public SelectionManager selectionManager;
+
 	public TypeOfUnit unitType;
 	public GameObject panel;
+
+	public bool finished;
 
 	//mientras el proyecto no esté ordenado
 	public Sprite icon;
@@ -20,6 +23,10 @@ public class Unit : MonoBehaviour, ISelectable
 	public int range;
 	public float damage;
 
+	void Awake(){
+		selectionManager = GameObject.Find ("Selection Manager").GetComponent<SelectionManager> ();
+	}
+
 	void Start ()
 	{
 		if (unitType.Equals (TypeOfUnit.WalkableUnit)) {
@@ -30,6 +37,12 @@ public class Unit : MonoBehaviour, ISelectable
 		}
 
 		life = lifeSpawn;
+		finished = false;
+	}
+
+	public bool Finished {
+		get{ return finished; }
+		set{ finished = value; }
 	}
 
 	public float Damage {
@@ -62,17 +75,18 @@ public class Unit : MonoBehaviour, ISelectable
 		set{ lifeSpawn = value; }
 	}
 
-	public void Move ()
-	{
+	//Walkable Functions!
+	public void DoAttack(Unit unit){
+		//quitar daño de unit con damage
 	}
 
-	public void WorkOn ()
-	{
+	public void DoMove(){
+		//mover a una casilla
+		Debug.Log("me estoy moviendo!");
 	}
 
-	public void Attack (GameObject obj)
-	{
-
+	public void DoWork(){
+		//explotar un recurso
 	}
 }
 
@@ -80,5 +94,12 @@ public enum TypeOfUnit
 {
 	WalkableUnit,
 	Building
+}
+
+public enum TypeOfAction{
+	Attack,
+	Move,
+	WorkOn,
+	None
 }
 	

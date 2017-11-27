@@ -20,6 +20,15 @@ public class BasicMovement : MonoBehaviour {
 		Vector3 movement = new Vector3 (x * speed * Time.deltaTime, 0f, z * speed * Time.deltaTime);
 		transform.position += movement;
 
+		RaycastHit hit;
+
+		if (Physics.Raycast (Camera.main.transform.position, Camera.main.transform.forward, out hit)) {
+			Debug.Log ("entro");
+			if (hit.collider.name.Equals("Fog(Clone)")) {
+				Destroy (hit.collider.gameObject);
+			}
+		}
+
 	}
 
 	void OnCollisionEnter(Collision c){
