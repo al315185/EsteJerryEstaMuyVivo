@@ -50,25 +50,38 @@ public class SelectionManager : MonoBehaviour {
 
 		unit.Panel.gameObject.SetActive (true);
 
-		if (unit.Panel.name.Equals ("Worker Panel")) {
-			UnitCanvas.transform.GetChild (1).gameObject.SetActive (false);
-			UnitCanvas.transform.GetChild (2).gameObject.SetActive (false);
+        if (unit.Panel.name.Equals("Worker Panel"))
+        {
+            UnitCanvas.transform.GetChild(1).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(2).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(3).gameObject.SetActive(false);
 
-		} else if (unit.Panel.name.Equals ("Soldier Panel")) {
-			UnitCanvas.transform.GetChild (0).gameObject.SetActive (false);
-			UnitCanvas.transform.GetChild (2).gameObject.SetActive (false);
+        }
+        else if (unit.Panel.name.Equals("Soldier Panel"))
+        {
+            UnitCanvas.transform.GetChild(0).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(2).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(3).gameObject.SetActive(false);
 
-		} else {
-			UnitCanvas.transform.GetChild (0).gameObject.SetActive (false);
-			UnitCanvas.transform.GetChild (1).gameObject.SetActive (false);
-		}
+        }
+        else if (unit.Panel.name.Equals("Building Panel"))
+        {
+            UnitCanvas.transform.GetChild(0).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(1).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(3).gameObject.SetActive(false);
+        }
+        else {
+            UnitCanvas.transform.GetChild(0).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(1).gameObject.SetActive(false);
+            UnitCanvas.transform.GetChild(2).gameObject.SetActive(false);
+        }
 	}
 
 	private void ActualizePanel(Unit unit){
 		
 		SwitchPanel (unit);
 
-		if (unit.UnitType.Equals (TypeOfUnit.WalkableUnit)) {			
+		if (unit.UnitType.Equals (TypeOfUnit.WalkableUnit) || unit.UnitType.Equals(TypeOfUnit.Turret)) {			
 			unit.Panel.transform.Find ("Icon").GetComponent<Image> ().sprite = unit.Icon;
 			unit.Panel.transform.Find ("Kingdom").GetComponent<Text> ().text = unit.Kingodm;
 			unit.Panel.transform.Find ("Damage").GetComponent<Text> ().text = unit.Damage.ToString ();
@@ -121,7 +134,7 @@ public class SelectionManager : MonoBehaviour {
 
 					//Si es un enemigo lo clickado, verificamos que lo anterior sea
 					//un obrero o soldaod pues lo unico que podemos hacer es atacar
-					if (unitActor.UnitType.Equals (TypeOfUnit.WalkableUnit)) {
+					if (unitActor.UnitType.Equals (TypeOfUnit.WalkableUnit) || unitActor.UnitType.Equals(TypeOfUnit.Turret)) {
 						if (currentAction.Equals (TypeOfAction.Attack)) {
 							unitActor.DoAttack (unitReceptor);
 							unitActor.Finished = true;
@@ -131,9 +144,10 @@ public class SelectionManager : MonoBehaviour {
 						//era moverse o trabajar sobre (cosa que no puede hacerse en una
 						//unidad enemiga), eliminamos toda acción
 						currentAction = TypeOfAction.None;
-					} 
+					}
+
 				}
-			} 
+			}
 
 			//Si lo que se ha seleccionado NO es una unidad (o suelo o recurso)
 			else {

@@ -93,7 +93,8 @@ public class Unit : MonoBehaviour
 public enum TypeOfUnit
 {
 	WalkableUnit,
-	Building
+	Building,
+    Turret
 }
 
 public enum TypeOfAction{
