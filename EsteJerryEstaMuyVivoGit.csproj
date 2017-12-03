@@ -220,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\AssetsPruebaPath\Scripts\ClickableTile.cs" />
+    <Compile Include="Assets\AssetsPruebaPath\Scripts\Node.cs" />
     <Compile Include="Assets\AssetsPruebaPath\Scripts\TileMap.cs" />
     <Compile Include="Assets\AssetsPruebaPath\Scripts\TileType.cs" />
     <Compile Include="Assets\AssetsPruebaPath\Scripts\Unit.cs" />
