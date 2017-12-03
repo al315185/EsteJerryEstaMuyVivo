@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class Hex : MonoBehaviour {
 
-    public int x;
-    public int y;
+    public float x ;
+    public float y;
+
+    private void Start()
+    {
+        x =  this.transform.position.x;
+        y = this.transform.position.z;
+
+    }
 
     //Look for neightboors
 }

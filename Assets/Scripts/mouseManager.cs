@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class mouseManager : MonoBehaviour {
 
-	// Use this for initialization
+    // Use this for initialization
+    public Map map;
 	void Start () {
 		
 	}
@@ -25,18 +27,57 @@ public class mouseManager : MonoBehaviour {
         if (Physics.Raycast(ray, out hitInfo))
         {
             GameObject hitObject = hitInfo.collider.transform.parent.gameObject;
-            Debug.Log("Raycast hit" + hitObject.name);
+            // Debug.Log("Raycast hit" + hitObject.name);
+            MeshRenderer mr = hitObject.GetComponentInChildren<MeshRenderer>();
+            Color oldColor = mr.material.color;
 
-            if(Input.GetMouseButton(0))
+            if (hitObject.tag == "unit")
+            {
+                
+                Debug.Log("UNIT");
+                SelectUnit(hitObject);
+
+            }
+           
+
+            if (hitObject.tag == "tile")
+            {
+               
+                Debug.Log("Raycast hit" + hitObject.name);
+                TileAction(hitObject);
+            }
+           
+
+            /*if(Input.GetMouseButton(0))
             {
                 MeshRenderer mr = hitObject.GetComponentInChildren<MeshRenderer>();
                /* if(hitObject.tag == "tile")
                 {
                     Debug.Log("It's a tile");
-                }*/
+                }
 
                 mr.material.color = Color.red;
-            }
+            }*/
         }
+    }
+
+    private void TileAction(GameObject hitObject)
+    {
+        if (Input.GetMouseButton(0))
+        {
+            float x = hitObject.GetComponent<Hex>().x;
+            float y = hitObject.GetComponent<Hex>().y;
+
+            map.MoveSelectUnitTo(x, y);
+        }
+    }
+
+    void SelectUnit(GameObject hitObject)
+    {
+        if (Input.GetMouseButton(0))
+        {
+            map.selectedUnit = hitObject.gameObject;
+        }
+
     }
 }
