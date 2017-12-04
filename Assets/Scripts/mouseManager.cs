@@ -43,7 +43,7 @@ public class mouseManager : MonoBehaviour {
             if (hitObject.tag == "tile")
             {
                
-                Debug.Log("Raycast hit" + hitObject.name);
+                //Debug.Log("Raycast hit" + hitObject.name);
                 TileAction(hitObject);
             }
            
@@ -65,10 +65,10 @@ public class mouseManager : MonoBehaviour {
     {
         if (Input.GetMouseButton(0))
         {
-            float x = hitObject.GetComponent<Hex>().x;
-            float y = hitObject.GetComponent<Hex>().y;
+            int x = hitObject.GetComponent<Hex>().tileX;
+            int y = hitObject.GetComponent<Hex>().tileY;
 
-            map.MoveSelectUnitTo(x, y);
+            map.GeneratePathTo(x, y);
         }
     }
 
