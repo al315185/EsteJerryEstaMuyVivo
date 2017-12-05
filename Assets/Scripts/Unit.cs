@@ -14,7 +14,7 @@ public class Unit : MonoBehaviour {
 
 
 
-    public List<Map.Node> currentPath = null;
+    public List<Node> currentPath = null;
 
     void Update()
     {
@@ -42,6 +42,7 @@ public class Unit : MonoBehaviour {
 
     public void MoveNextTile()
     {
+
         float remainingMovement = moveSpeed;
 
         while (remainingMovement > 0)
@@ -50,7 +51,7 @@ public class Unit : MonoBehaviour {
                 return;
 
             // Get cost from current tile to next tile
-            remainingMovement -= 1;
+            remainingMovement -= map.CostToEnterTile(currentPath[0].x, currentPath[0].y, currentPath[1].x, currentPath[1].y);
 
             // Move us to the next tile in the sequence
             tileX = currentPath[1].x;
@@ -69,6 +70,5 @@ public class Unit : MonoBehaviour {
                 currentPath = null;
             }
         }
-
     }
 }

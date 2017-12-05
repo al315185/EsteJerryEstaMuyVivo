@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class mouseManager : MonoBehaviour {
 
     // Use this for initialization
     public Map map;
+    public Button button;
 	void Start () {
+    
 		
 	}
 	
@@ -36,6 +39,8 @@ public class mouseManager : MonoBehaviour {
                 
                 Debug.Log("UNIT");
                 SelectUnit(hitObject);
+               
+               
 
             }
            
@@ -76,6 +81,8 @@ public class mouseManager : MonoBehaviour {
     {
         if (Input.GetMouseButton(0))
         {
+            button.onClick.RemoveAllListeners();
+            button.onClick.AddListener(hitObject.GetComponent<Unit>().MoveNextTile);
             map.selectedUnit = hitObject.gameObject;
         }
 

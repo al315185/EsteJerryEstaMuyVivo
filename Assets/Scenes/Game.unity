@@ -194,7 +194,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 291510323}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 406, y: 255.5, z: 0}
+  m_LocalPosition: {x: 389.5, y: 290, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1764135181}
@@ -288,7 +288,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 309294018}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 406, y: 255.5, z: 0}
+  m_LocalPosition: {x: 389.5, y: 290, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -641,18 +641,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1764135183}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1134273553}
-        m_MethodName: MoveNextTile
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1764135183
@@ -782,12 +771,18 @@ MonoBehaviour:
   - name: Normal
     tileVisualPrefab: {fileID: 1883482685998266, guid: 2a3b4640870f1df41a1e2e8bd3485bb8,
       type: 2}
+    isWalkable: 1
+    momevementCost: 1
   - name: Mountain
     tileVisualPrefab: {fileID: 1261989111885720, guid: 42a4f1a580b6c8e458bc6f6bd2ea32db,
       type: 2}
+    isWalkable: 1
+    momevementCost: 2
   - name: Sawmp
     tileVisualPrefab: {fileID: 1445034697354020, guid: b364348fd161c9141b26fc77b5f0de5f,
       type: 2}
+    isWalkable: 0
+    momevementCost: 1
 --- !u!4 &2043629524
 Transform:
   m_ObjectHideFlags: 0
@@ -829,6 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map: {fileID: 2043629523}
+  button: {fileID: 1764135182}
 --- !u!4 &2103560945
 Transform:
   m_ObjectHideFlags: 0

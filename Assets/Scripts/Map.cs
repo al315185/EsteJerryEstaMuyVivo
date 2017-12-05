@@ -25,13 +25,29 @@ public class Map : MonoBehaviour {
         GenerateMapData();
         GeneratePathFindgGraph();
         GenerateMapVisual();
+
+        
         
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        if (selectedUnit == null)
+            return;
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if(selectedUnit.transform.position == map[x, y].transform.position)
+                {
+                    selectedUnit.GetComponent<Unit>().tileX = map[x, y].tileX;
+                    selectedUnit.GetComponent<Unit>().tileY = map[x, y].tileY;
+
+                }
+            }
+        }
 	}
 
     void GenerateMapData()
@@ -70,22 +86,19 @@ public class Map : MonoBehaviour {
 
     }
 
-    public class Node
+    public float CostToEnterTile (int sourceX, int sourceY, int targetX, int targetY)
     {
-        public List<Node> neighbours;
-        public int x;
-        public int y;
+        TileType tt = tileTypes[tiles[targetX, targetY]];
 
-        public Node()
-        {
-            neighbours = new List<Node>();
-        }
+        if (UnitCanEnterTile(targetX, targetY) == false)
+            return Mathf.Infinity;
+        float cost = tt.momevementCost;
 
-        public float DistanceTo(Node n)
-        {
-            return Vector2.Distance(new Vector2(x, y), new Vector2(n.x, n.y));
-        }
+        return cost;
+        
     }
+
+    
 
     void GeneratePathFindgGraph()
     {
@@ -187,6 +200,11 @@ public class Map : MonoBehaviour {
         return new Vector3(map[x,y].x, 0,map[x,y].y);
     }
 
+    public bool UnitCanEnterTile(int x, int y)
+    {
+        return tileTypes[tiles[x, y]].isWalkable;
+    }
+
     public void GeneratePathTo(int x, int y)
     {
         if (selectedUnit == null)
@@ -250,7 +268,7 @@ public class Map : MonoBehaviour {
 
             foreach (Node v in u.neighbours)
             {
-                float alt = dist[u] + u.DistanceTo(v);
+                float alt = dist[u] +  CostToEnterTile(u.x,u.y,v.x,v.y);
                 if(alt < dist[v])
                 {
                     dist[v] = alt;
