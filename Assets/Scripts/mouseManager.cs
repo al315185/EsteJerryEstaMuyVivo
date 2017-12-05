@@ -82,7 +82,7 @@ public class mouseManager : MonoBehaviour {
         if (Input.GetMouseButton(0))
         {
             button.onClick.RemoveAllListeners();
-            button.onClick.AddListener(hitObject.GetComponent<Unit>().MoveNextTile);
+            button.onClick.AddListener(hitObject.GetComponent<Unit>().NextTurn);
             map.selectedUnit = hitObject.gameObject;
         }
 

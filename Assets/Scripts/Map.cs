@@ -94,6 +94,13 @@ public class Map : MonoBehaviour {
             return Mathf.Infinity;
         float cost = tt.momevementCost;
 
+        if (sourceX != targetX && sourceY != targetY)
+        {
+            // We are moving diagonally!  Fudge the cost for tie-breaking
+            // Purely a cosmetic thing!
+            cost += 0.001f;
+        }
+
         return cost;
         
     }
