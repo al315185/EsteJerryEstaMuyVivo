@@ -11,10 +11,10 @@ public class CollectionArea : MonoBehaviour {
     //Lista de unidades que se encuentran en este momento en el área de recogida.
     [SerializeField]
     [Tooltip("Lista de unidades que se encuentran en el recurso.")]
-    private List<Unit> unitList = new List<Unit>();
+    private List<Unidad> unitList = new List<Unidad>();
 
 
-    public void addResourcesToUnit(Unit u)
+    public void addResourcesToUnit(Unidad u)
     {
         u.Owner.AddResources(areaResource, quantityOfResource);
 		u.finished = true;

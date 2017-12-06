@@ -2,14 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance;
 
-    public Player Player;
+    public Player Jugador;
     public Player CPU;
     public Player ActivePlayer;
+
+	public GameObject TurnCanvas;
+	private Text PlayerText;
+
 
     private void Awake()
     {
@@ -24,22 +29,36 @@ public class GameManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        ActivePlayer = Player;
+		ActivePlayer = Jugador;
+		ActivePlayer.isMyTurn = true;
+		PlayerText = TurnCanvas.transform.GetChild (1).GetComponent<Text> ();
+		ShowCanvas ();
     }
 
 	public void ChangeTurn(){
-		if (ActivePlayer.Equals (Player)) {
+		if (ActivePlayer.Equals (Jugador)) {
 			ActivePlayer = CPU;
 			CPU.ResetUnits ();
 		} else {
-			ActivePlayer = Player;
-			Player.ResetUnits ();
+			ActivePlayer = Jugador;
+			Jugador.ResetUnits ();
 		}
 	}
 
 	public void CheckPlayerTurn(){
 		if (ActivePlayer.isEndOfTurn ())
 			ChangeTurn ();
+	}
+
+	public void ShowCanvas(){
+		TurnCanvas.SetActive (true);
+		PlayerText.text = ActivePlayer.name;
+		StartCoroutine (WaitAndHide (4f));
+	}
+
+	public IEnumerator WaitAndHide(float nSeconds){
+		yield return new WaitForSeconds (nSeconds);
+		TurnCanvas.SetActive (false);
 	}
 
 }

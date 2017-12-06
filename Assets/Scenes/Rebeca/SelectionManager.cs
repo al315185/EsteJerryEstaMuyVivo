@@ -46,7 +46,7 @@ public class SelectionManager : MonoBehaviour {
         }
     }
 
-	private void SwitchPanel(Unit unit){
+	private void SwitchPanel(Unidad unit){
 
 		unit.Panel.gameObject.SetActive (true);
 
@@ -77,7 +77,7 @@ public class SelectionManager : MonoBehaviour {
         }
 	}
 
-	private void ActualizePanel(Unit unit){
+	private void ActualizePanel(Unidad unit){
 		
 		SwitchPanel (unit);
 
@@ -104,19 +104,19 @@ public class SelectionManager : MonoBehaviour {
 				//si no habia nada seleccionado el Canvas se encuentra desactivado
 				//por lo que se activa y se actualiza el panel para la unidad actual
 				UnitCanvas.SetActive (true);
-				ActualizePanel (objective.GetComponent<Unit> ());
+				ActualizePanel (objective.GetComponent<Unidad> ());
 			}	
 		} 
 
 		//Si ya tenemos una unidad seleccionada 
 		else 
 		{
-			Unit unitActor = currentSelected.GetComponent<Unit> ();
+			Unidad unitActor = currentSelected.GetComponent<Unidad> ();
 
 			//Si lo que se ha seleccionado ahora es una unidad
 			if (objective.tag.Equals ("Unit")) {
 
-				Unit unitReceptor = objective.GetComponent<Unit> ();
+				Unidad unitReceptor = objective.GetComponent<Unidad> ();
 
 				// ¿es una unidad aliada o una unidad enemiga?
 				if (unitActor.Kingodm.Equals (unitReceptor.Kingodm)) {

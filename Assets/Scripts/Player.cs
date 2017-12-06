@@ -10,7 +10,7 @@ public class Player : MonoBehaviour {
     public Resource enzymes;
     public bool isMyTurn;
 
-    public List<Unit> Squad = new List<Unit>();
+    public List<Unidad> Squad = new List<Unidad>();
 
     private void Start()
     {
@@ -19,12 +19,12 @@ public class Player : MonoBehaviour {
         enzymes = new Resource(ResourceType.enzyme);
     }
 
-    public void EnlistUnit(Unit u)
+    public void EnlistUnit(Unidad u)
     {
         Squad.Add(u);
     }
 
-	public void DeleteUnit(Unit u){
+	public void DeleteUnit(Unidad u){
 		Squad.Remove (u);
 	}
 
@@ -42,13 +42,13 @@ public class Player : MonoBehaviour {
     }
 
 	public void ResetUnits(){
-		foreach (Unit u in Squad) {
+		foreach (Unidad u in Squad) {
 			u.finished = false;
 		}
 	}
 
 	public bool isEndOfTurn(){
-		foreach (Unit u in Squad) {
+		foreach (Unidad u in Squad) {
 			if (!u.finished) {
 				isMyTurn = false;
 				return false;
