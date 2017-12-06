@@ -36,3 +36,43 @@ C:\Users\Rebeca\Documents\GitHub\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine
 C:\Users\Rebeca\Documents\GitHub\EsteJerryEstaMuyVivo\obj\Debug\Assembly-CSharp.dll
 C:\Users\Rebeca\Documents\GitHub\EsteJerryEstaMuyVivo\obj\Debug\Assembly-CSharp.pdb
 C:\Users\Rebeca\Documents\GitHub\EsteJerryEstaMuyVivo\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Assembly-CSharp.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Assembly-CSharp.pdb
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\nunit.framework.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEditor.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.Analytics.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.HoloLens.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.Networking.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.Purchasing.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.SpatialTracking.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.TestRunner.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.Timeline.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.UI.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.UIAutomation.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Vuforia.UnityExtensions.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.Cecil.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.SerializationLogic.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\ExCSS.Unity.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.DataContract.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.Legacy.NRefactory.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.UNetWeaver.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.CecilTools.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.Cecil.Pdb.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Unity.Cecil.Mdb.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEditor.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\Vuforia.UnityExtensions.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.UI.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.Networking.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.TestRunner.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\nunit.framework.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.Timeline.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.UIAutomation.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.GoogleAudioSpatializer.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.HoloLens.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\Temp\bin\Debug\UnityEngine.SpatialTracking.xml
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\obj\Debug\Assembly-CSharp.dll
+D:\Mi Carpeta\Repositorio\EsteJerryEstaMuyVivo\obj\Debug\Assembly-CSharp.pdb

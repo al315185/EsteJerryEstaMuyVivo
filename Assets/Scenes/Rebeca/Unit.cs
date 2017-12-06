@@ -9,6 +9,7 @@ public class Unit : MonoBehaviour
 
 	public TypeOfUnit unitType;
 	public GameObject panel;
+    public Player Owner;
 
 	public bool finished;
 
