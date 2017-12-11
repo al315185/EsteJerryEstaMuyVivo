@@ -6,7 +6,6 @@ using UnityEngine.EventSystems;
 
 public class SelectionManager : MonoBehaviour {
 
-	public GameObject currentPanel;
 	public GameObject UnitCanvas;
 	public GameObject currentSelected;
 	public TypeOfAction currentAction;
@@ -25,7 +24,12 @@ public class SelectionManager : MonoBehaviour {
 		UnitCanvas.SetActive (false);
 	}
 
+
+	public Map map;
+
 	void Update () {
+
+//		if (!currentAction.Equals(TypeOfAction.None)){}
 
        if (EventSystem.current.IsPointerOverGameObject())
         {
@@ -38,7 +42,6 @@ public class SelectionManager : MonoBehaviour {
         if (Physics.Raycast(ray, out hitInfo))
         {
             GameObject hitObject = hitInfo.collider.gameObject;
-			Debug.Log (hitObject.name);
             if(Input.GetMouseButton(0))
             {
 				Manage (hitObject);
@@ -158,7 +161,9 @@ public class SelectionManager : MonoBehaviour {
 					if (objective.tag.Equals ("Suelo")) {
 
 						if (currentAction.Equals (TypeOfAction.Move)) {
-							unitActor.DoMove ();
+							unitActor.DoMove (objective);
+							currentSelected = null;
+							UnitCanvas.SetActive(false);
 							unitActor.Finished = true;
 
 						} else {
@@ -205,4 +210,6 @@ public class SelectionManager : MonoBehaviour {
 	{
 		currentAction = TypeOfAction.Attack;
 	}
+
+
 }

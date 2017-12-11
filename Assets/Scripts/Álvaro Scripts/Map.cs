@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Map : MonoBehaviour {
 
+	//------//------//------//------//------//
+	// FOG OF WAR //
+//	HexCellShaderData cellShaderData;
+	//------//------//------//------//------//
+
+
     public GameObject selectedUnit;
     public TileType[] tileTypes;
     Node[,] graph;
@@ -17,21 +23,24 @@ public class Map : MonoBehaviour {
     float xOffset = 1.77f;
     float zOffset = 1.51f;
 
+	void Awake(){
+		//------//------//------//------//------//
+		// FOG OF WAR //
+//		cellShaderData = gameObject.AddComponent<HexCellShaderData>();
+		//------//------//------//------//------//
 
-	// Use this for initialization
+	}
+
+
 	void Start () {
         selectedUnit = null;
 
         GenerateMapData();
         GeneratePathFindgGraph();
         GenerateMapVisual();
-
-        
-        
-		
+	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 
         if (selectedUnit == null)
@@ -83,6 +92,7 @@ public class Map : MonoBehaviour {
         tiles[4, 6] = 2;
         tiles[8, 5] = 2;
         tiles[8, 6] = 2;
+
 
     }
 
@@ -178,30 +188,30 @@ public class Map : MonoBehaviour {
 
     void GenerateMapVisual()
     {
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                float xPos = x * xOffset
-                    ;
+		for (int x = 0; x < width; x++) {
+			for (int y = 0; y < height; y++) {
+				float xPos = x * xOffset;
 
-                if (y % 2 == 1)
-                {
-                    xPos += xOffset / 2f;
-                }
-                TileType tt = tileTypes[tiles[x, y]];
-                GameObject hex_go = (GameObject)Instantiate(tt.tileVisualPrefab, new Vector3(xPos, 0, y * zOffset), Quaternion.identity);
-                hex_go.name = "Hex_" + x + "_" + y;
-                hex_go.GetComponent<Hex>().x = x;
-                hex_go.GetComponent<Hex>().y = y;
-                hex_go.GetComponent<Hex>().tileX = x;
-                hex_go.GetComponent<Hex>().tileY = y;
-                map[x, y] = hex_go.GetComponent<Hex>();
+				if (y % 2 == 1) {
+					xPos += xOffset / 2f;
+				}
+				TileType tt = tileTypes [tiles [x, y]];
+				GameObject hex_go = (GameObject)Instantiate (tt.tileVisualPrefab, new Vector3 (xPos, 0, y * zOffset), Quaternion.identity);
+				hex_go.name = "Hex_" + x + "_" + y;
 
-                hex_go.transform.SetParent(this.transform);
-            }
-        }
+				hex_go.GetComponent<Hex> ().x = x;
+				hex_go.GetComponent<Hex> ().y = y;
+
+				hex_go.GetComponent<Hex> ().tileX = x;
+				hex_go.GetComponent<Hex> ().tileY = y;
+				map [x, y] = hex_go.GetComponent<Hex> ();
+
+				hex_go.transform.SetParent (this.transform);
+
+			}
+		}
     }
+
     public Vector3 TileCoordToWorldCoord(int x, int y)
     {
         return new Vector3(map[x,y].x, 0,map[x,y].y);
@@ -224,7 +234,9 @@ public class Map : MonoBehaviour {
 
         //clear old path;
 
+		// ESTO ES PARA OBJETO TIPO UNIT
         selectedUnit.GetComponent<Unit>().currentPath = null;
+
 
         //Create dictionary for dikjstra 
 
@@ -302,6 +314,8 @@ public class Map : MonoBehaviour {
         }
 
         currentPath.Reverse();
-        selectedUnit.GetComponent<Unit>().currentPath = currentPath;
+
+		selectedUnit.GetComponent<Unit>().currentPath = currentPath;
+
     }
 }

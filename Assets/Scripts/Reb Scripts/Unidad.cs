@@ -24,8 +24,12 @@ public class Unidad : MonoBehaviour
 	public int range;
 	public float damage;
 
+	Pathfinding pathfinding;
+
+
 	void Awake(){
 		selectionManager = GameObject.Find ("Selection Manager").GetComponent<SelectionManager> ();
+		pathfinding = GetComponent<Pathfinding> ();
 	}
 
 	void Start ()
@@ -39,6 +43,11 @@ public class Unidad : MonoBehaviour
 
 		life = lifeSpawn;
 		finished = false;
+	}
+
+	void Update(){
+		
+
 	}
 
 	public bool Finished {
@@ -81,9 +90,10 @@ public class Unidad : MonoBehaviour
 		//quitar daño de unit con damage
 	}
 
-	public void DoMove(){
-		//mover a una casilla
-		Debug.Log("me estoy moviendo!");
+	public void DoMove(GameObject hitObject){
+		pathfinding.SetSelected (gameObject);
+		pathfinding.TileAction (hitObject);
+		pathfinding.NextTurn ();
 	}
 
 	public void DoWork(){
@@ -104,4 +114,6 @@ public enum TypeOfAction{
 	WorkOn,
 	None
 }
+
+
 	

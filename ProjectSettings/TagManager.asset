@@ -6,6 +6,8 @@ TagManager:
   tags:
   - tile
   - unit
+  - Unit
+  - Suelo
   layers:
   - Default
   - TransparentFX
