@@ -64,6 +64,12 @@
      <Compile Include="Assets\Scripts\Reb Scripts\BasicCamera.cs" />
      <Compile Include="Assets\Scripts\Reb Scripts\BasicMovement.cs" />
      <Compile Include="Assets\Scripts\Reb Scripts\HexCellShaderData.cs" />
+     <Compile Include="Assets\Scripts\Reb Scripts\Influence Map\GridPosition.cs" />
+     <Compile Include="Assets\Scripts\Reb Scripts\Influence Map\InfluenceGrid.cs" />
+     <Compile Include="Assets\Scripts\Reb Scripts\Influence Map\InfluenceMap.cs" />
+     <Compile Include="Assets\Scripts\Reb Scripts\Influence Map\InfluencePosition.cs" />
+     <Compile Include="Assets\Scripts\Reb Scripts\Influence Map\Influencer.cs" />
+     <Compile Include="Assets\Scripts\Reb Scripts\Influence Map\Originator.cs" />
      <Compile Include="Assets\Scripts\Reb Scripts\Pathfinding.cs" />
      <Compile Include="Assets\Scripts\Reb Scripts\RTSCamera.cs" />
      <Compile Include="Assets\Scripts\Reb Scripts\SelectionManager.cs" />
