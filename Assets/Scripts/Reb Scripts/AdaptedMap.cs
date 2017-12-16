@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,29 +9,39 @@ public class AdaptedMap : MonoBehaviour
 	public TileType[] tileTypes;
 	Node[,] graph;
 
-	Hex[,] map;
+    public Hex[,] map;
 
-	int[,] tiles;
-	public int height = 20;
-	public int width = 20;
+	public int[,] tiles;
+	public int height = 40;
+	public int width = 60;
 
 	float xOffset = 1.77f;
 	float zOffset = 1.51f;
 
 	void Awake(){
-		
-	}
+        map = new Hex[width, height];
+    }
 
 
 	void Start () {
 		selectedUnit = null;
 
-		GenerateMapData();
+        GenerateDataInfo(this.gameObject);
+        GenerateMapData();
 		GeneratePathFindgGraph();
-		GenerateMapVisual();
+		//GenerateMapVisual();
 	}
 
-	void Update () {
+    private void GenerateDataInfo(GameObject mapa)
+    {
+        Hex[] hexMap = mapa.transform.GetComponentsInChildren<Hex>();
+        foreach( Hex h in hexMap )
+        {
+            map[h.tileX, h.tileY] = h;
+        }
+    }
+
+    void Update () {
 
 		if (selectedUnit == null)
 			return;
