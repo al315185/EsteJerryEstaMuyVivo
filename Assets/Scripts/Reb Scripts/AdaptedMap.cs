@@ -20,13 +20,12 @@ public class AdaptedMap : MonoBehaviour
 
 	void Awake(){
         map = new Hex[width, height];
+        GenerateDataInfo(gameObject);
     }
 
 
 	void Start () {
 		selectedUnit = null;
-
-        GenerateDataInfo(this.gameObject);
         GenerateMapData();
 		GeneratePathFindgGraph();
 		//GenerateMapVisual();
@@ -34,9 +33,9 @@ public class AdaptedMap : MonoBehaviour
 
     private void GenerateDataInfo(GameObject mapa)
     {
-        Hex[] hexMap = mapa.transform.GetComponentsInChildren<Hex>();
-        foreach( Hex h in hexMap )
+        for(int i=0; i < gameObject.transform.childCount; i++)
         {
+            Hex h = gameObject.transform.GetChild(i).GetComponent<Hex>();
             map[h.tileX, h.tileY] = h;
         }
     }
@@ -61,7 +60,7 @@ public class AdaptedMap : MonoBehaviour
 	void GenerateMapData()
 	{
 		tiles = new int[width, height];
-		map = new Hex[width, height];
+		//map = new Hex[width, height];
 
 		for (int x = 0; x < width; x++)
 		{

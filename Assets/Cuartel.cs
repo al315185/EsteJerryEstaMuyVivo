@@ -9,7 +9,7 @@ public class Cuartel : MonoBehaviour {
     [Tooltip("Coste de enzimas para generar")]
     public int costeEnzimas;
     [Tooltip("Unidad que genera el cuartel")]
-
+    public GameObject unidad;
     public AdaptedMap mapa;
     private Hex[,] hex;
 
