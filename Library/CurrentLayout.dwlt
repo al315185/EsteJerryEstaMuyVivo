@@ -108,7 +108,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 1
-  controlID: 46
+  controlID: 150
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 47
+  controlID: 151
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -157,7 +157,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 48
+  controlID: 127
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 99
+  controlID: 152
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -418,9 +418,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.727539, y: 0.32080078, z: 3.5336914}
+    m_Target: {x: 82.36328, y: 114.140625, z: 36.328125}
     speed: 2
-    m_Value: {x: 3.727539, y: 0.32080078, z: 3.5336914}
+    m_Value: {x: 82.36328, y: 114.140625, z: 36.328125}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -443,19 +443,19 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.3523989, y: 0.23626573, z: -0.09241946, w: 0.9008067}
+    m_Target: {x: -0.35352182, y: -0.07006727, z: 0.026557364, w: -0.9324209}
     speed: 2
-    m_Value: {x: -0.35239893, y: -0.23626575, z: 0.09241946, w: -0.9008067}
+    m_Value: {x: -0.35352182, y: -0.07006727, z: 0.026557364, w: -0.9324209}
   m_Size:
-    m_Target: 4.315505
+    m_Target: 164.50513
     speed: 2
-    m_Value: 4.315505
+    m_Value: 164.50513
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0.1861966, y: 0.3466027, z: -0.07039617, w: 0.9166471}
+  m_LastSceneViewRotation: {x: -0.35239893, y: -0.23626575, z: 0.09241946, w: -0.9008067}
   m_LastSceneViewOrtho: 1
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -584,24 +584,24 @@ MonoBehaviour:
     width: 505
     height: 448
   m_TreeViewState:
-    scrollPos: {x: 0, y: 1257}
-    m_SelectedIDs: ee3d0000
-    m_LastClickedID: 15854
-    m_ExpandedIDs: e0faffff86fbffff88fbffff00000000d43d0000
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 6464ffff
+    m_LastClickedID: -39836
+    m_ExpandedIDs: 6064ffff0265ffff2465ffff2665ffffa0fbffff00000000f43d0000163e0000a63e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Torre
+      m_OriginalName: Torre
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -39828
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 
@@ -648,19 +648,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources/Prefabs/Unit Prefabs
+    - Assets/Scripts/Reb Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Prefabs/Unit Prefabs
+  - Assets/Scripts/Reb Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\Mi carpeta\UNITY\EsteJerryEstaMuyVivo
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 6a290000
-    m_LastClickedID: 10602
-    m_ExpandedIDs: 00000000e6280000122900009e3c0000aa3c0000e23c000000ca9a3bffffff7f
+    m_SelectedIDs: 08290000
+    m_LastClickedID: 10504
+    m_ExpandedIDs: 00000000e22800000e290000ae3c0000ba3c0000f23c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -688,7 +688,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e6280000122900009e3c0000aa3c0000e23c0000
+    m_ExpandedIDs: 00000000e22800000e290000ae3c0000ba3c0000f23c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -719,18 +719,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 10d3ffff6e2d0000fc3100009e2e000014280000ae2e0000662b00007629000016280000203e000070320000982b00009ea6ffffa6290000b0f0fcff36eefcff7e0fffff10b0ffffaec8ffffc682ffffc82b0000d02b0000ea86feff862700004a2700001e2700004028000090270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Unidad
+      m_OriginalName: Unidad
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 2168
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 12}
     m_CreateAssetUtility:
@@ -769,7 +769,7 @@ MonoBehaviour:
     y: 100
     width: 553
     height: 910
-  m_ScrollPosition: {x: 0, y: 0}
+  m_ScrollPosition: {x: 0, y: 195.95508}
   m_InspectorMode: 0
   m_PreviewResizer:
     m_CachedPref: 184
