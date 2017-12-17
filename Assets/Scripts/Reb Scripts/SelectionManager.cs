@@ -1,16 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SelectionManager : MonoBehaviour {
 
 	public GameObject UnitCanvas;
 	public GameObject currentSelected;
 	public TypeOfAction currentAction;
+    public GameObject currentBuilding;
 
-	public TypeOfAction CurrentAction{
+    public ResourceType currentResource;
+
+    public GameObject Barracks;
+    public GameObject Tower;
+
+    public TypeOfAction CurrentAction{
 		get{ return currentAction; }
 		set{ currentAction = value; }
 	}
@@ -47,6 +51,11 @@ public class SelectionManager : MonoBehaviour {
 				Manage (hitObject);
             }
         }
+    }
+
+    public void setCurrentBuilding(GameObject building)
+    {
+        this.currentBuilding = building;
     }
 
 	private void SwitchPanel(Unidad unit){
@@ -160,20 +169,29 @@ public class SelectionManager : MonoBehaviour {
 
 					if (objective.tag.Equals ("Suelo")) {
 
-						if (currentAction.Equals (TypeOfAction.Move)) {
-							unitActor.DoMove (objective);
-							currentSelected = null;
-							UnitCanvas.SetActive(false);
-							unitActor.Finished = true;
+                        switch (currentAction)
+                        {
+                            case TypeOfAction.Move:
+                                unitActor.DoMove(objective);
+                                currentSelected = null;
+                                UnitCanvas.SetActive(false);
+                                unitActor.Finished = true;
+                                break;
+                            case TypeOfAction.WorkOn:
+                                unitActor.DoWork(currentBuilding, objective.transform.parent.transform, GameManager.Instance.ActivePlayer);
+                                break;
+                            case TypeOfAction.Attack:
+                                break;
+                            default:
+                                currentSelected = null;
+                                UnitCanvas.SetActive(false);
+                                break;
 
-						} else {
-							currentSelected = null;
-							UnitCanvas.SetActive (false);
-						}
+                        }
 					} 
 					else if (objective.tag.Equals ("Recursos")) {
 						if (currentAction.Equals (TypeOfAction.WorkOn)) {
-							unitActor.DoWork ();
+							unitActor.DoWork (currentResource);
 							unitActor.Finished = true;
 
 						} else {

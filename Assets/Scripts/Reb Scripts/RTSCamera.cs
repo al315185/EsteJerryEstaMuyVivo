@@ -17,8 +17,6 @@ public class RTSCamera : MonoBehaviour {
 
 		float actualX = GetComponent<Camera> ().ScreenToViewportPoint (Input.mousePosition).x;
 		float actualY = GetComponent<Camera> ().ScreenToViewportPoint (Input.mousePosition).y;
-
-		Debug.Log (actualY);
 			
 		if (actualX < xLimit) {
 			transform.position += Vector3.left * Time.deltaTime * velocity;

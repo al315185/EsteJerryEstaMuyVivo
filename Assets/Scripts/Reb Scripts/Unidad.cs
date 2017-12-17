@@ -13,6 +13,7 @@ public class Unidad : MonoBehaviour
 
 	public bool finished;
 
+    [Header("UI")]
 	//mientras el proyecto no esté ordenado
 	public Sprite icon;
 	public string kingdom;
@@ -96,9 +97,28 @@ public class Unidad : MonoBehaviour
 		pathfinding.NextTurn ();
 	}
 
-	public void DoWork(){
-		//explotar un recurso
-	}
+	public void DoWork(GameObject building, Transform parent, Player currentPlayer){
+        GameObject newObject = Instantiate(building, parent);
+        newObject.transform.parent = parent;
+        if(newObject.GetComponent<Cuartel>()) newObject.GetComponent<Cuartel>().owner = currentPlayer;
+        // TODO else torre
+        //float margin = newObject.GetComponent<Renderer>().bounds.size.y / 2;
+        //Transform unitTransform = newObject.transform;
+        //unitTransform.position = new Vector3(unitTransform.position.x, unitTransform.position.y + margin + 1, unitTransform.position.z);
+    }
+
+    public void DoWork(ResourceType _type)
+    {
+        switch (_type)
+        {
+            case ResourceType.enzyme:
+                //TODO
+                break;
+            case ResourceType.oxygen:
+                //TODO
+                break;
+        }
+    }
 }
 
 public enum TypeOfUnit
@@ -113,6 +133,12 @@ public enum TypeOfAction{
 	Move,
 	WorkOn,
 	None
+}
+
+public enum TypeOfBuilding
+{
+    Tower,
+    Barracks
 }
 
 

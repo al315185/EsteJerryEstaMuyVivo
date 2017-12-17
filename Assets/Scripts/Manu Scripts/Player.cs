@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
 
-    public Resource oxygen;
-    public Resource enzymes;
+    public int oxygen;
+    public int enzymes;
     public bool isMyTurn;
 
     public List<Unidad> Squad = new List<Unidad>();
@@ -15,8 +15,8 @@ public class Player : MonoBehaviour {
     private void Start()
     {
         //Inicializamos los recursos a 0
-        oxygen = new Resource(ResourceType.oxygen);
-        enzymes = new Resource(ResourceType.enzyme);
+        oxygen = 500;
+        enzymes = 500;
     }
 
     public void EnlistUnit(Unidad u)
@@ -33,10 +33,10 @@ public class Player : MonoBehaviour {
         switch (r)
         {
             case ResourceType.enzyme:
-                enzymes.quantity += i;
+                enzymes+= i;
                 break;
             case ResourceType.oxygen:
-                oxygen.quantity += i;
+                oxygen+= i;
                 break;
         }
     }

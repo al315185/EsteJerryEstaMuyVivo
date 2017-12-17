@@ -31,8 +31,8 @@ public class GameManager : MonoBehaviour {
     void Start () {
 		ActivePlayer = Jugador;
 		ActivePlayer.isMyTurn = true;
-		PlayerText = TurnCanvas.transform.GetChild (1).GetComponent<Text> ();
-		ShowCanvas ();
+		//PlayerText = TurnCanvas.transform.GetChild (1).GetComponent<Text> ();
+		//ShowCanvas ();
     }
 
 	public void ChangeTurn(){
